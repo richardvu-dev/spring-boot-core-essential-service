@@ -11,7 +11,7 @@ import com.richard.springdatajpa.io.entities.AuthorityEntity;
 @Repository
 public interface AuthorityNativeQueryRepository extends JpaRepository<AuthorityEntity, UUID> {
 
-  @Query(nativeQuery = true, value = "SELECT * FROM authorities WHERE id = :id")
+  @Query(nativeQuery = true, value = "SELECT * FROM authorities WHERE id = :id AND is_delete = false")
   AuthorityEntity getAuthorityByIdUsingNativeQuery(UUID id);
 
 }
