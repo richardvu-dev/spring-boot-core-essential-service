@@ -1,0 +1,84 @@
+server:
+  port: 1000
+
+management:
+  endpoints: 
+    web:
+      exposure: 
+        include: "health, info"
+  info:
+    java:
+      enabled: true
+    env:
+      enabled: true
+
+info:
+  application: spring-data-jpa-service
+  label: Spring Data JPA Service
+  version: 1.0.0
+  state: Development
+
+spring:
+  datasource:
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+  jpa:
+    open-in-view: true
+    show-sql: true
+
+logging:
+  file:
+    name: ${pwd}/log/application.log
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+--- 
+spring:
+  config:
+    activate:
+      on-profile:
+      - localhost
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/spring_data_jpa_service
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+--- 
+spring:
+  config:
+    activate:
+      on-profile:
+      - development
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/spring_data_jpa_service
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+--- 
+spring:
+  config:
+    activate:
+      on-profile:
+      - production
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/spring_data_jpa_service
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+springdoc:
+  swagger-ui:
+    enabled: false
