@@ -14,13 +14,13 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Schema(name = "Role Response", description = "Role Response")
+@Schema(description = "Role Response")
 public class RoleRes extends BaseDto {
 
   @Schema(name = "name", description = "Name of role")
   private String name;
 
-  @Schema(name = "Authority Response", description = "Authorities of role")
+  @Schema(name = "authorities", description = "Authorities of role")
   private Set<AuthorityRes> authorities;
 
 }

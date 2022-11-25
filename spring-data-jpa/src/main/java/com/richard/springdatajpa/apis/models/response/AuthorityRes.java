@@ -12,10 +12,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Schema(name = "Authority Response", description = "Authority Response")
+@Schema(description = "Authority Response")
 public class AuthorityRes extends BaseDto {
 
-  @Schema(name = "name", description = "Name of authority")
+  @Schema(description = "Name of authority")
   private String name;
 
 }

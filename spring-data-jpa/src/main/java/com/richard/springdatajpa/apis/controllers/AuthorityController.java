@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/authorities")
-@Tag(name = "Authority", description = "Authority Controller")
+@Tag(name = "Authorities", description = "Authority Controller")
 public class AuthorityController {
 
   @Autowired

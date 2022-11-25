@@ -1,7 +1,7 @@
 package com.richard.springdatajpa.io.entities;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -32,10 +32,10 @@ public abstract class BaseEntity implements Serializable {
   private String updateBy = "system";
 
   @Column(nullable = false, insertable = true, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-  private LocalDateTime createdAt = LocalDateTime.now();
+  private ZonedDateTime createdAt = ZonedDateTime.now();
 
   @Column(nullable = false, insertable = true, updatable = true, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-  private LocalDateTime lastModifiedAt = LocalDateTime.now();
+  private ZonedDateTime lastModifiedAt = ZonedDateTime.now();
 
   @Column(name = "is_delete", columnDefinition = "boolean default false")
   private Boolean isDelete;

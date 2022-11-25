@@ -15,7 +15,7 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Schema(name = "Notification Response", description = "Notification Response")
+@Schema(description = "Notification Response")
 public class Notification implements Serializable {
 
   private static final long serialVersionUID = -5828101164006114538L;
