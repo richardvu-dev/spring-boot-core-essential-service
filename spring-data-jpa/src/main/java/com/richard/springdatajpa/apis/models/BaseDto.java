@@ -2,7 +2,6 @@ package com.richard.springdatajpa.apis.models;
 
 import java.io.Serializable;
 import java.time.ZonedDateTime;
-import java.time.ZonedDateTime;
 import java.util.UUID;
 
 import javax.persistence.MappedSuperclass;
