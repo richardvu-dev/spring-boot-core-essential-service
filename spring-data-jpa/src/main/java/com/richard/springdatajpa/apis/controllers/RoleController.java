@@ -25,7 +25,7 @@ public class RoleController {
   private RoleService roleService;
 
   @GetMapping("/by-id/{id}")
-  @Operation(summary = "Get Role", description = "Get Role by id")
+  @Operation(summary = "Get Role", description = "Get Role By Id Using Native Query")
   public ResponseEntity<RoleRes> getRoleByIdUsingNativeQuery(@PathVariable(name = "id") UUID id) {
 
     RoleRes roleRes = roleService.getRoleByIdUsingNativeQuery(id);
